@@ -1,0 +1,8 @@
+{
+  "name": "Computer Lab Equipment Maintenance",
+  "description": "Computer lab equipment inventory and maintenance tracking system with QR code series numbering and scanner.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

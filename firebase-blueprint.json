@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "Equipment": {
+      "title": "Equipment",
+      "description": "Lab equipment item with unique QR series number and maintenance details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "seriesNumber": { "type": "string", "description": "Unique format INV.XX000.YYMMDD" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "brand": { "type": "string" },
+        "model": { "type": "string" },
+        "labLocation": { "type": "string" },
+        "manufacturerSerial": { "type": "string" },
+        "specifications": { "type": "string" },
+        "status": { "type": "string", "enum": ["operational", "maintenance_required", "under_repair", "decommissioned"] },
+        "acquisitionDate": { "type": "string" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["seriesNumber", "name", "category", "labLocation", "status", "acquisitionDate"]
+    }
+  },
+  "firestore": {
+    "collections": {
+      "equipments": {
+        "schema": "Equipment",
+        "description": "Inventory of all computer lab equipment items"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /equipments/{equipmentId} {
+      // Allow lab personnel and scanner to read equipment records
+      allow read: if true;
+      // Allow adding and updating equipment records with required fields
+      allow write: if request.resource.data.name is string 
+                   && request.resource.data.seriesNumber is string;
+      allow delete: if true;
+    }
+  }
+}
